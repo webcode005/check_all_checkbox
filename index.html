@@ -1,0 +1,32 @@
+check all
+
+
+ <th><input type="checkbox" id="approve_all"  value="1" onclick="check_all('approve_all','approve');" />&nbsp; <a href="#"> Approve All</a></th>
+
+
+     function check_all(all_check,check_all)
+    {
+        var chk_all = document.getElementById(all_check);
+        var check_flag =  true;
+        if(chk_all.checked==true)
+        {
+            check_flag =  true;
+        }
+        else
+        {
+            check_flag =  false;
+        }
+        
+        
+        var chk_arr = document.getElementsByName(check_all+'[]');
+        var chklength = chk_arr.length;             
+        var k=0;
+        for(k=0;k< chklength;k++)
+        {
+            chk_arr[k].checked = check_flag;
+        } 
+    }
+
+
+    <td><input type="checkbox" name="approve[]" value="31" />&nbsp;<a href="#" onclick="approve_part('31')"> Approve</a></td>
+                               
